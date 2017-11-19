@@ -26,6 +26,17 @@ gulp.task('html',function(){
 
         .pipe(gulp.dest('./dist/app'));
 });
+//
+gulp.task('json', function() {
+    return gulp.src('src/*.json')
+        .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('images', function() {
+    return gulp.src('src/images/*.png')
+        .pipe(gulp.dest('./dist/images'));
+});
+
 // 定义一个sass任务
 gulp.task('sass', function () {
   return gulp.src('./src/css/*.scss')//任务针对的文件
@@ -40,7 +51,7 @@ gulp.task('connect', function () {
     });
 });
 //默认执行
-gulp.task('dev',['sass','es6','html','connect','open'])
+gulp.task('dev',['sass','es6','html','json','connect','images','open'])
 
 //监听任务
 gulp.task('open', function () {
