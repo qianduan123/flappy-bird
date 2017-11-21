@@ -16,7 +16,7 @@ gulp.task('es6', function() {
     .pipe($.babel({
       presets: ['es2015']
     }))
-      .pipe(uglify())
+      // .pipe(uglify())
       .pipe(connect.reload())  //自动刷新
     .pipe(gulp.dest('./dist/js'));
 });
